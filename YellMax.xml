@@ -1,0 +1,539 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+    <Script file="YellMax.lua" />
+    <Frame name="FrameMain" parent="UIParent" toplevel="true" movable="true" hidden="true">
+        <Size>
+            <AbsDimension x="470" y="270" />
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0" />
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11" />
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32" />
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32" />
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="OVERLAY">
+                <FontString name="FontStringChoseChannel" inherits="GameFontNormal" text="频道选择">
+                    <Size x="71" y="20" />
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="25" y="-24" />
+                    </Anchors>
+                </FontString>
+                <FontString name="FontStringSendMessage" inherits="GameFontNormal" text="发送内容(最多255字)">
+                    <Size x="155" y="20" />
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="25" y="-120" />
+                    </Anchors>
+                </FontString>
+                <FontString name="FontStringNotice" inherits="GameFontNormal" text="输入/YM或/YELLMAX可再次打开插件">
+                    <Size x="281" y="20" />
+                    <Anchors>
+                        <Anchor point="BOTTOM" x="0" y="60" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="FrameChannelRaid">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="25" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontStringRa" inherits="GameFontNormal" text="Ra">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButtonRa" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannelParty">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="85" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontStringP" inherits="GameFontNormal" text="P">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButtonP" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannelGuid">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="145" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontStringG" inherits="GameFontNormal" text="G">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButtonG" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel1">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="205" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString1" inherits="GameFontNormal" text="1">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton1" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel2">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="265" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString2" inherits="GameFontNormal" text="2">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton2" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel3">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="325" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString3" inherits="GameFontNormal" text="3">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton3" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel4">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="385" y="-50" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString4" inherits="GameFontNormal" text="4">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton4" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel5">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="25" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString5" inherits="GameFontNormal" text="5">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton5" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel6">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="85" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString6" inherits="GameFontNormal" text="6">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton6" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel7">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="145" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString7" inherits="GameFontNormal" text="7">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton7" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel8">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="205" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString8" inherits="GameFontNormal" text="8">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton8" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel9">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="265" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString9" inherits="GameFontNormal" text="9">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton9" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannel10">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="325" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontString10" inherits="GameFontNormal" text="10">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="CheckButton10" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Frame name="FrameChannelYell">
+                <Size x="60" y="30" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="385" y="-80" />
+                </Anchors>
+                <Backdrop bgFile="" edgeFile="" tile="true" alphaMode="DISABLE">
+                    <BackgroundInsets>
+                        <AbsInset left="11" right="12" top="12" bottom="11" />
+                    </BackgroundInsets>
+                    <TileSize val="32" />
+                    <EdgeSize val="32" />
+                </Backdrop>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="FontStringYell" inherits="GameFontNormal" text="Y">
+                            <Size x="37" y="37" />
+                            <Anchors>
+                                <Anchor point="CENTER" x="-15" y="0" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <CheckButton name="FrameChannelYell" inherits="UICheckButtonTemplate" text="CheckButton1">
+                        <Size x="30" y="30" />
+                        <Anchors>
+                            <Anchor point="CENTER" x="10" y="0" />
+                        </Anchors>
+                    </CheckButton>
+                </Frames>
+            </Frame>
+            <Button name="ButtonSend" inherits="UIPanelButtonTemplate" enableMouse="true" enableMouseMotion="true" text="发送">
+                <Size x="130" y="30" />
+                <Anchors>
+                    <Anchor point="BOTTOM" x="-120" y="20" />
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        Send()
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="ButtonClose" inherits="UIPanelButtonTemplate" enableMouse="true" enableMouseClicks="true" text="关闭">
+                <Size x="130" y="30" />
+                <Anchors>
+                    <Anchor point="BOTTOM" x="120" y="20" />
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        GUIClose()
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <EditBox inherits="InputBoxTemplate" letters="255" autoFocus="false">
+                <Size x="368" y="28" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="25" y="-146" />
+                </Anchors>
+            </EditBox>
+            <Button name="ButtonSave" inherits="UIPanelButtonTemplate" enableMouse="true" enableMouseClicks="true" text="保存">
+                <Size x="54" y="24" />
+                <Anchors>
+                    <Anchor point="TOPLEFT" x="399" y="-150" />
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        SaveChanged()
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                self:RegisterForDrag("LeftButton")
+                self:RegisterEvent("ADDON_LOADED")
+                Init(self)
+            </OnLoad>
+            <OnEvent>
+                YellMax_OnEvent(self, event, ...)
+            </OnEvent>
+            <OnDragStart>
+                self:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                self:StopMovingOrSizing()
+            </OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>

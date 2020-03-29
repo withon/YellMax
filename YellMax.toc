@@ -1,0 +1,8 @@
+## Interface: 11304
+## Title: YellMax
+## Notes: 各频道喊话
+## SavedVariablesPerCharacter: YellMaxDB
+## Author: with on
+## Version: 1.0.0
+
+YellMax.xml
